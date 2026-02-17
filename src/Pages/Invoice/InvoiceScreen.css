@@ -1,0 +1,123 @@
+.invoice-container {
+  padding: 0;
+  /* Remove padding to let AppBar be full width */
+  background-color: #f8f9fa;
+  /* Light clean background */
+  min-height: 100vh;
+  font-family: 'Poppins', 'Sarabun', sans-serif;
+}
+
+.invoice-header {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.invoice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 80px;
+  /* Space for bottom nav if any */
+}
+
+.invoice-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.invoice-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.invoice-id {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.invoice-status {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-paid {
+  background-color: #e6fcf5;
+  color: #0ca678;
+}
+
+.status-pending {
+  background-color: #fff4e6;
+  color: #f76707;
+}
+
+.card-body {
+  margin-bottom: 16px;
+}
+
+.invoice-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.invoice-date {
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.slip-thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.slip-thumbnail:hover {
+  transform: scale(1.1);
+}
+
+/* Modal Customization */
+.modal-content {
+  outline: none;
+}
+
+/* SweetAlert2 z-index fix to appear above MUI Modal */
+.swal-above-modal {
+  z-index: 1400 !important;
+}

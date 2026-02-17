@@ -1,0 +1,29 @@
+{
+    "isSuccess": true,
+    "message": "Success",
+    "dataResult": {
+        "standardTime": 20,
+        "startDate": "2025-08-29T09:12:03.316Z",
+        "endDate": "2025-08-29T16:12:03.317Z",
+        "details": [
+            {
+                "operationId": 1592729,
+                "description": "Y20001",
+                "acttype": "Y20001",
+                "activity": "0010",
+                "startTime": "16:22",
+                "endTime": null,
+                "startDate": "2025-08-29T09:22:24.035Z",
+                "endDate": null,
+                "totalTime": "0:00",
+                "presonnel": [
+                    {
+                        "personnalNumber": "91630020",
+                        "personnalName": "อรรคเดช นาราช"
+                    }
+                ]
+            }
+        ],
+        "travelCharge": false
+    }
+}
