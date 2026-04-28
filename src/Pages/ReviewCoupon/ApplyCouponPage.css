@@ -1,0 +1,436 @@
+/* =============================================
+   ApplyCouponPage — Agentic UI Styles
+   ============================================= */
+
+.apply-page {
+  min-height: 100vh;
+  background: #f7f3f3;
+  padding-bottom: 100px;
+}
+
+/* Hero */
+.apply-hero {
+  background: linear-gradient(135deg, #6e5353 0%, #8b6f6f 40%, #1b413c 100%);
+  padding: 28px 20px 40px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.apply-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.apply-content {
+  padding: 16px;
+  margin-top: -24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Code Input Card */
+.code-input-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+}
+
+.code-input-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.code-input {
+  flex: 1;
+  border: 2px solid #e0d6d6;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 1.05rem;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  outline: none;
+  transition: all 0.25s ease;
+  background: #faf8f8;
+}
+
+.code-input:focus {
+  border-color: #6e5353;
+  box-shadow: 0 0 0 3px rgba(110, 83, 83, 0.12);
+  background: #fff;
+}
+
+.code-input.valid {
+  border-color: #159e75;
+  box-shadow: 0 0 0 3px rgba(21, 158, 117, 0.12);
+}
+
+.code-input.invalid {
+  border-color: #cf3e3e;
+  box-shadow: 0 0 0 3px rgba(207, 62, 62, 0.12);
+}
+
+.validate-btn {
+  padding: 0 20px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Prompt', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6e5353, #1b413c);
+  color: #fff;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  min-width: 90px;
+}
+
+.validate-btn:hover:not(:disabled) {
+  box-shadow: 0 4px 16px rgba(110, 83, 83, 0.3);
+  transform: translateY(-1px);
+}
+
+.validate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Agent Thinking Dots */
+.thinking-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.thinking-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6e5353;
+  animation: dotBounce 1.4s infinite;
+}
+
+.thinking-dot:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.thinking-dot:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* Validation Result */
+.validation-result {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1.5px solid;
+}
+
+.validation-result.success {
+  border-color: rgba(21, 158, 117, 0.3);
+  background: linear-gradient(135deg, rgba(21, 158, 117, 0.04), rgba(27, 65, 60, 0.04));
+}
+
+.validation-result.error {
+  border-color: rgba(207, 62, 62, 0.3);
+  background: rgba(207, 62, 62, 0.04);
+}
+
+.validation-icon {
+  font-size: 2rem !important;
+  margin-bottom: 6px;
+}
+
+.validation-msg {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Discount Calculator */
+.discount-calc {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 16px;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0eded;
+}
+
+.calc-row:last-child {
+  border-bottom: none;
+}
+
+.calc-label {
+  font-size: 0.85rem;
+  color: #8a7d7d;
+}
+
+.calc-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4a3f3f;
+}
+
+.calc-value.discount {
+  color: #cf3e3e;
+}
+
+.calc-value.total {
+  font-size: 1.2rem;
+  color: #159e75;
+  font-weight: 700;
+}
+
+.calc-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e0d6d6, transparent);
+  margin: 4px 0;
+}
+
+/* Order Amount Input */
+.order-input-group {
+  margin-bottom: 16px;
+}
+
+.order-input-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6e5353;
+  margin-bottom: 6px;
+}
+
+.order-input {
+  width: 100%;
+  border: 1.5px solid #e0d6d6;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: 'Prompt', sans-serif;
+  outline: none;
+  transition: all 0.2s ease;
+  background: #faf8f8;
+}
+
+.order-input:focus {
+  border-color: #6e5353;
+  box-shadow: 0 0 0 3px rgba(110, 83, 83, 0.1);
+  background: #fff;
+}
+
+/* Type Selector */
+.type-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.type-option {
+  flex: 1;
+  padding: 10px;
+  border: 1.5px solid #e0d6d6;
+  border-radius: 12px;
+  font-family: 'Prompt', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  background: #faf8f8;
+  color: #8a7d7d;
+}
+
+.type-option.selected {
+  border-color: #1b413c;
+  background: rgba(27, 65, 60, 0.06);
+  color: #1b413c;
+}
+
+/* Available List */
+.available-section {
+  margin-top: 20px;
+}
+
+.available-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #6e5353;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mini-coupon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1.5px solid transparent;
+}
+
+.mini-coupon:hover {
+  border-color: #1b413c;
+  box-shadow: 0 2px 8px rgba(27, 65, 60, 0.1);
+}
+
+.mini-coupon.active {
+  border-color: #159e75;
+  background: rgba(21, 158, 117, 0.04);
+}
+
+.mini-discount-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1b413c, #2d6b5e);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.mini-discount-val {
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mini-discount-unit {
+  font-size: 0.5rem;
+  opacity: 0.8;
+}
+
+.mini-coupon-info {
+  flex: 1;
+}
+
+.mini-coupon-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1b413c;
+  letter-spacing: 0.04em;
+}
+
+.mini-coupon-name {
+  font-size: 0.72rem;
+  color: #a0928f;
+}
+
+/* Apply Button */
+.apply-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: 'Prompt', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #159e75 0%, #1b413c 100%);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.apply-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(21, 158, 117, 0.35);
+}
+
+.apply-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.apply-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  transform: translateX(-100%);
+  animation: shimmerBtn 2.5s infinite;
+}
+
+/* Success overlay specific */
+.apply-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+}
+
+.apply-success-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px 28px;
+  text-align: center;
+  max-width: 340px;
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+}
+
+.apply-success-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #159e75, #1b413c, #6e5353);
+}
+
+.success-amount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #159e75;
+  margin: 8px 0 4px;
+}
+
+.success-amount-label {
+  font-size: 0.78rem;
+  color: #a0928f;
+}
+
+@keyframes shimmerBtn {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

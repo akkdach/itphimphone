@@ -1,0 +1,228 @@
+/* =============================================
+   CouponBanner — Agentic UI Styles
+   ============================================= */
+
+.coupon-banner {
+  margin: 12px 0;
+}
+
+.coupon-banner-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1b413c;
+  margin-bottom: 10px;
+  padding: 0 2px;
+}
+
+.coupon-banner-count {
+  background: rgba(21, 158, 117, 0.12);
+  color: #159e75;
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* Horizontal Scroll */
+.coupon-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.coupon-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mini Ticket Card */
+.coupon-ticket {
+  min-width: 220px;
+  max-width: 240px;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  display: flex;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.coupon-ticket:hover {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.coupon-ticket-left {
+  width: 70px;
+  background: linear-gradient(135deg, #1b413c, #2d6b5e);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 10px 6px;
+  position: relative;
+}
+
+.coupon-ticket-left::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #f7f3f3;
+  border-radius: 50%;
+}
+
+.ticket-discount-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ticket-discount-unit {
+  font-size: 0.6rem;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.ticket-source {
+  font-size: 0.45rem;
+  padding: 2px 5px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.2);
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.coupon-ticket-right {
+  flex: 1;
+  padding: 10px 12px 10px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ticket-code {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #1b413c;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+
+.ticket-name {
+  font-size: 0.68rem;
+  color: #8a7d7d;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.ticket-expire {
+  font-size: 0.6rem;
+  color: #a0928f;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.ticket-expire.urgent {
+  color: #cf3e3e;
+  font-weight: 600;
+}
+
+.ticket-use-btn {
+  align-self: flex-start;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Prompt', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1b413c, #2d6b5e);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.ticket-use-btn:hover {
+  box-shadow: 0 2px 8px rgba(27, 65, 60, 0.3);
+}
+
+/* CTA Card — "Review to get coupon" */
+.coupon-cta-card {
+  min-width: 200px;
+  background: linear-gradient(135deg, rgba(110, 83, 83, 0.06), rgba(27, 65, 60, 0.06));
+  border: 1.5px dashed rgba(110, 83, 83, 0.3);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.coupon-cta-card:hover {
+  border-color: #6e5353;
+  background: rgba(110, 83, 83, 0.08);
+  transform: translateY(-2px);
+}
+
+.cta-icon {
+  font-size: 1.8rem !important;
+  color: #6e5353;
+}
+
+.cta-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #6e5353;
+  line-height: 1.3;
+}
+
+.cta-sub {
+  font-size: 0.6rem;
+  color: #a0928f;
+}
+
+/* Shimmer loading */
+.coupon-skeleton {
+  min-width: 220px;
+  height: 80px;
+  border-radius: 14px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.coupon-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(110,83,83,0.06) 50%, transparent 100%);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

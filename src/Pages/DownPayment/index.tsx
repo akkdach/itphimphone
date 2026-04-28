@@ -10,6 +10,7 @@ import UploadSlip from '../../Component/UploadSlip';
 import Swal from 'sweetalert2';
 import { uploadImageService } from '../../Services/uploadImageService';
 import Loader from '../../Component/Loader';
+import CouponBanner from '../../Component/CouponBanner';
 const DownPayment = () => {
   const [isLoader, setIsLoader] = useState<boolean>(false);
   const navigate = useNavigate();
@@ -121,22 +122,30 @@ const DownPayment = () => {
                           <Typography variant="subtitle1">
                             #{item.id} / {item.orderType}
                           </Typography>
-                          {/* <Typography variant="subtitle1">ราคาสินค้า</Typography> */}
                           <Typography variant="body2">
-                            ราคาสินค้า ฿{item.amount.toLocaleString()}
+                            ราคาสินค้า ฿{item.amount?.toLocaleString()}
                           </Typography>
-                          {!item.disCount && <Typography variant="body2">
-                            ส่วนลด ฿{item.disCount.toLocaleString()}
+                          {item.disCount > 0 && <Typography variant="body2">
+                            ส่วนลด ฿{item.disCount?.toLocaleString()}
                           </Typography>}
-                          {!item.promotion && <Typography variant="body2">
+                          {item.promotion && <Typography variant="body2">
                             โปรโมชั่นพิเศษ {item.promotion}
                           </Typography>}
+                          {(item.couponDiscount > 0 || item.couponAmount > 0) && (
+                            <Typography variant="body2" sx={{ color: '#159e75', fontWeight: 600 }}>
+                              🎟️ มูลค่าคูปอง -฿{(item.couponDiscount || item.couponAmount || 0).toLocaleString()}
+                              {item.couponCode && <span style={{ fontWeight: 400, fontSize: '0.75rem', marginLeft: 6 }}>({item.couponCode})</span>}
+                            </Typography>
+                          )}
                         </Stack>
                         <Stack p={0}>
                           <InstallmentProgress totalAmount={item?.amount} paidAmount={item?.paid} />
                         </Stack>
                       </CardContent>
                     </Card>
+
+                    {/* Coupon Banner */}
+                    <CouponBanner orderType="order" orderId={item.id} orderAmount={item.amount} />
 
                     {/* เมนูการดำเนินการ */}
                     <Stack

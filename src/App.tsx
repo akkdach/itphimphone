@@ -23,6 +23,9 @@ import CallbackPage from './Pages/CallbackPage';
 import RegisterForm from './Pages/Register/RegisterForm';
 import ProductDetail from './Component/ProductCatalog/ProductDetail';
 import InvoiceScreen from './Pages/Invoice/InvoiceScreen';
+import ReviewPage from './Pages/ReviewCoupon/ReviewPage';
+import MyCouponsPage from './Pages/ReviewCoupon/MyCouponsPage';
+import ApplyCouponPage from './Pages/ReviewCoupon/ApplyCouponPage';
 const token = localStorage.getItem('token');
 function App() {
   return (
@@ -47,6 +50,9 @@ function App() {
             <Route path="DownPayment" element={<DownPaymentScreen />}></Route>
             <Route path="paid" element={<PaymentScreen />}></Route>
             <Route path="ProductDetail" element={<ProductDetail />} />
+            <Route path="review" element={<ReviewPage />} />
+            <Route path="my-coupons" element={<MyCouponsPage />} />
+            <Route path="apply-coupon" element={<ApplyCouponPage />} />
           </Routes></Layout></UserProvider>) : (<Routes>
             <Route path='/' element={<LoginPage />}></Route>
             <Route path='*' element={<LoginPage />}></Route>

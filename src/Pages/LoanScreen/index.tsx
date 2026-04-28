@@ -9,6 +9,7 @@ import { uploadImageService } from '../../Services/uploadImageService';
 import Loader from '../../Component/Loader';
 import { CloudUpload } from '@mui/icons-material';
 import InstallmentProgress from '../../Component/InstallmentProgress';
+import CouponBanner from '../../Component/CouponBanner';
 import Swal from 'sweetalert2';
 
 const LoanScreen = () => {
@@ -144,21 +145,29 @@ const LoanScreen = () => {
                     }}
                   >
                     <Stack spacing={1}>
-                      {/* <Box display="flex" justifyContent="space-between">
-                        <Typography variant="body2" color="text.secondary">ยอดผ่อน/เดือน</Typography>
+                      <Box display="flex" justifyContent="space-between">
+                        <Typography variant="body2" color="text.secondary">ยอดสินเชื่อ</Typography>
                         <Typography variant="body2" fontWeight="bold">
-                          ฿{item.installmentAmount.toLocaleString()}
+                          ฿{(item.loanAmount || 0).toLocaleString()}
                         </Typography>
-                      </Box> */}
-                      {/* <Box display="flex" justifyContent="space-between">
-                        <Typography variant="body2" color="text.secondary">วันที่เริ่มสัญญา</Typography>
-                        <Typography variant="body2">
-                          {new Date(item.startDate).toLocaleDateString('th-TH')}
-                        </Typography>
-                      </Box> */}
+                      </Box>
+                      {(item.couponDiscount > 0 || item.couponAmount > 0) && (
+                        <Box display="flex" justifyContent="space-between">
+                          <Typography variant="body2" sx={{ color: '#159e75' }}>
+                            🎟️ มูลค่าคูปอง
+                            {item.couponCode && <span style={{ fontSize: '0.7rem', marginLeft: 4 }}>({item.couponCode})</span>}
+                          </Typography>
+                          <Typography variant="body2" fontWeight="bold" sx={{ color: '#159e75' }}>
+                            -฿{(item.couponDiscount || item.couponAmount || 0).toLocaleString()}
+                          </Typography>
+                        </Box>
+                      )}
                     </Stack>
                   </Box>
                 </Stack>
+
+                {/* Coupon Banner */}
+                <CouponBanner orderType="loan" orderId={item.id} orderAmount={item.loanAmount} />
 
                 <Stack spacing={2} mt={3}>
                   <Button fullWidth variant="outlined" size="large"
