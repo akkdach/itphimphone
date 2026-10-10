@@ -1,29 +1,43 @@
 /* =============================================
    ReviewPage — Social Media Screenshot Upload
-   Agentic UI Styles
+   Pink/Rose Theme (DUI Style)
    ============================================= */
 
 .review-page {
   min-height: 100vh;
-  background: #f7f3f3;
+  background: linear-gradient(180deg, #fff5f7 0%, #fce4ec 30%, #fff0f3 100%);
   padding-bottom: 100px;
 }
 
 /* Hero Header */
 .review-hero {
-  background: linear-gradient(135deg, #6e5353 0%, #1b413c 100%);
-  padding: 28px 20px 36px;
+  background: linear-gradient(135deg, #e8879a 0%, #f2b5c3 50%, #f8c9d4 100%);
+  padding: 28px 20px 40px;
   color: #fff;
   position: relative;
   overflow: hidden;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  box-shadow: 0 6px 24px rgba(232, 135, 154, 0.3);
 }
 
 .review-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12) 0%, transparent 60%);
+  background: radial-gradient(circle at 70% 20%, rgba(255,255,255,0.25) 0%, transparent 60%);
   pointer-events: none;
+}
+
+.review-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -10%;
+  width: 120%;
+  height: 50px;
+  background: linear-gradient(180deg, #fff5f7 0%, #fce4ec 30%, #fff0f3 100%);
+  border-radius: 50% 50% 0 0;
 }
 
 .review-hero-title {
@@ -31,11 +45,12 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   margin-bottom: 4px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .review-hero-sub {
   font-size: 0.85rem;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .review-content {
@@ -46,44 +61,45 @@
 .review-tabs {
   display: flex;
   gap: 0;
-  background: #ece5e5;
-  border-radius: 12px;
-  padding: 3px;
-  margin: -20px 16px 16px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 4px;
+  margin: -22px 20px 16px;
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(232, 135, 154, 0.18);
 }
 
 .review-tab {
   flex: 1;
   padding: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-family: 'Prompt', sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
   background: transparent;
-  color: #8a7d7d;
+  color: #c4a0a8;
 }
 
 .review-tab.active {
-  background: #fff;
-  color: #6e5353;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, #e8879a 0%, #f2b5c3 100%);
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(232, 135, 154, 0.35);
 }
 
 /* Step Cards */
 .step-card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 20px;
   margin-bottom: 14px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 16px rgba(232, 135, 154, 0.1);
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(232, 135, 154, 0.08);
 }
 
 .step-card::before {
@@ -93,7 +109,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #6e5353, #1b413c);
+  background: linear-gradient(90deg, #e8879a, #f2b5c3, #f8c9d4);
 }
 
 .step-number {
@@ -101,7 +117,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6e5353, #1b413c);
+  background: linear-gradient(135deg, #e8879a, #f2b5c3);
   color: #fff;
   align-items: center;
   justify-content: center;
@@ -109,12 +125,13 @@
   font-weight: 700;
   margin-right: 10px;
   flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(232, 135, 154, 0.3);
 }
 
 .step-title {
   font-size: 0.92rem;
   font-weight: 600;
-  color: #4a3f3f;
+  color: #5a3a42;
   display: flex;
   align-items: center;
   margin-bottom: 12px;
@@ -131,9 +148,9 @@
   flex: 1;
   min-width: 90px;
   padding: 12px 14px;
-  border: 1.5px solid #e0d6d6;
-  border-radius: 12px;
-  background: #faf8f8;
+  border: 1.5px solid #f5d5dc;
+  border-radius: 14px;
+  background: #fff5f7;
   cursor: pointer;
   transition: all 0.25s ease;
   display: flex;
@@ -143,25 +160,23 @@
   font-family: 'Prompt', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  color: #4a3f3f;
+  color: #5a3a42;
   text-decoration: none;
 }
 
 .social-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(232, 135, 154, 0.2);
 }
 
-
-
 .social-btn.ig {
-  border-color: rgba(225, 48, 108, 0.3);
+  border-color: rgba(225, 48, 108, 0.25);
   color: #E1306C;
 }
 .social-btn.ig:hover { background: rgba(225, 48, 108, 0.06); }
 
 .social-btn.tiktok {
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.15);
   color: #000;
 }
 .social-btn.tiktok:hover { background: rgba(0, 0, 0, 0.04); }
@@ -172,13 +187,13 @@
 
 /* Screenshot Upload Zone */
 .screenshot-upload-zone {
-  border: 2.5px dashed #d0c4c4;
-  border-radius: 16px;
+  border: 2.5px dashed #f2b5c3;
+  border-radius: 18px;
   padding: 32px 20px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: #faf8f8;
+  background: #fff5f7;
   position: relative;
   min-height: 160px;
   display: flex;
@@ -188,33 +203,34 @@
 }
 
 .screenshot-upload-zone:hover {
-  border-color: #6e5353;
-  background: rgba(110, 83, 83, 0.04);
+  border-color: #e8879a;
+  background: rgba(232, 135, 154, 0.06);
+  box-shadow: 0 4px 16px rgba(232, 135, 154, 0.12);
 }
 
 .screenshot-upload-zone.has-images {
   border-style: solid;
-  border-color: #159e75;
-  background: rgba(21, 158, 117, 0.03);
+  border-color: #e8879a;
+  background: rgba(232, 135, 154, 0.04);
   padding: 16px;
 }
 
 .upload-area-icon {
   font-size: 3rem !important;
-  color: #c0b5b5;
+  color: #f2b5c3;
   margin-bottom: 8px;
 }
 
 .upload-area-title {
   font-size: 0.92rem;
   font-weight: 600;
-  color: #6e5353;
+  color: #e8879a;
   margin-bottom: 4px;
 }
 
 .upload-area-sub {
   font-size: 0.75rem;
-  color: #a0928f;
+  color: #c4a0a8;
 }
 
 /* Image Preview Grid */
@@ -227,9 +243,10 @@
 
 .screenshot-thumb {
   position: relative;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 1;
+  box-shadow: 0 2px 8px rgba(232, 135, 154, 0.15);
 }
 
 .screenshot-thumb img {
@@ -245,7 +262,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: rgba(207, 62, 62, 0.9);
+  background: rgba(232, 135, 154, 0.9);
   border: none;
   color: #fff;
   font-size: 0.7rem;
@@ -258,26 +275,27 @@
 
 .screenshot-remove:hover {
   transform: scale(1.15);
+  background: #e8879a;
 }
 
 .screenshot-add-btn {
-  border: 2px dashed #d0c4c4;
-  border-radius: 10px;
+  border: 2px dashed #f2b5c3;
+  border-radius: 12px;
   aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background: #faf8f8;
-  color: #a0928f;
+  background: #fff5f7;
+  color: #c4a0a8;
   font-size: 0.65rem;
   transition: all 0.2s ease;
 }
 
 .screenshot-add-btn:hover {
-  border-color: #6e5353;
-  color: #6e5353;
+  border-color: #e8879a;
+  color: #e8879a;
 }
 
 /* Star Rating */
@@ -320,49 +338,55 @@
 .review-type-btn {
   flex: 1;
   padding: 10px;
-  border: 1.5px solid #e0d6d6;
-  border-radius: 12px;
+  border: 1.5px solid #f5d5dc;
+  border-radius: 14px;
   font-family: 'Prompt', sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
   text-align: center;
   transition: all 0.2s ease;
-  background: #faf8f8;
-  color: #8a7d7d;
+  background: #fff5f7;
+  color: #c4a0a8;
 }
 
 .review-type-btn.selected {
-  border-color: #1b413c;
-  background: rgba(27, 65, 60, 0.06);
-  color: #1b413c;
+  border-color: #e8879a;
+  background: linear-gradient(135deg, rgba(232, 135, 154, 0.1), rgba(242, 181, 195, 0.1));
+  color: #e8879a;
+  box-shadow: 0 2px 8px rgba(232, 135, 154, 0.15);
 }
 
 /* Order ID Input */
 .order-id-input {
   width: 100%;
-  border: 1.5px solid #e0d6d6;
-  border-radius: 12px;
+  border: 1.5px solid #f5d5dc;
+  border-radius: 14px;
   padding: 12px 14px;
   font-size: 0.9rem;
   font-family: 'Prompt', sans-serif;
   outline: none;
   transition: all 0.2s ease;
-  background: #faf8f8;
+  background: #fff5f7;
   box-sizing: border-box;
+  color: #5a3a42;
 }
 
 .order-id-input:focus {
-  border-color: #6e5353;
-  box-shadow: 0 0 0 3px rgba(110, 83, 83, 0.1);
+  border-color: #e8879a;
+  box-shadow: 0 0 0 3px rgba(232, 135, 154, 0.12);
   background: #fff;
+}
+
+.order-id-input::placeholder {
+  color: #d4b0b8;
 }
 
 /* Section Title */
 .section-title {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #6e5353;
+  color: #e8879a;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -374,22 +398,24 @@
   width: 100%;
   padding: 14px;
   border: none;
-  border-radius: 12px;
+  border-radius: 50px;
   font-size: 1rem;
   font-weight: 600;
   font-family: 'Prompt', sans-serif;
   color: #fff;
-  background: linear-gradient(135deg, #6e5353 0%, #1b413c 100%);
+  background: linear-gradient(135deg, #e8879a 0%, #f2b5c3 100%);
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
   margin-top: 20px;
+  box-shadow: 0 4px 16px rgba(232, 135, 154, 0.35);
+  letter-spacing: 0.02em;
 }
 
 .submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(110, 83, 83, 0.35);
+  box-shadow: 0 8px 28px rgba(232, 135, 154, 0.45);
 }
 
 .submit-btn:disabled {
@@ -401,7 +427,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
   transform: translateX(-100%);
   animation: shimmerBtn 2.5s infinite;
 }
@@ -419,37 +445,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(6px);
+  background: rgba(90, 58, 66, 0.45);
+  backdrop-filter: blur(8px);
 }
 
 .success-card {
   background: #fff;
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 36px 28px;
   text-align: center;
   max-width: 320px;
   width: 90%;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(232, 135, 154, 0.25);
 }
 
 .success-icon {
   font-size: 3.5rem !important;
-  color: #159e75;
+  color: #e8879a;
   margin-bottom: 12px;
 }
 
 .success-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1b413c;
+  color: #5a3a42;
   margin-bottom: 6px;
 }
 
 .success-sub {
   font-size: 0.82rem;
-  color: #8a7d7d;
+  color: #c4a0a8;
   margin-bottom: 18px;
 }
 
@@ -493,8 +520,8 @@
 }
 
 .status-approved {
-  background: rgba(21, 158, 117, 0.12);
-  color: #159e75;
+  background: rgba(232, 135, 154, 0.12);
+  color: #e8879a;
 }
 
 .status-approved::before {
@@ -502,8 +529,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #159e75;
-  box-shadow: 0 0 6px rgba(21, 158, 117, 0.5);
+  background: #e8879a;
+  box-shadow: 0 0 6px rgba(232, 135, 154, 0.5);
 }
 
 .status-rejected {
@@ -519,15 +546,16 @@
 /* History Cards */
 .review-history-card {
   background: #fff;
-  border: 1px solid #ece5e5;
-  border-radius: 14px;
+  border: 1px solid rgba(232, 135, 154, 0.12);
+  border-radius: 18px;
   padding: 14px;
   margin-bottom: 10px;
   transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(232, 135, 154, 0.06);
 }
 
 .review-history-card:hover {
-  box-shadow: 0 4px 16px rgba(110, 83, 83, 0.1);
+  box-shadow: 0 4px 20px rgba(232, 135, 154, 0.15);
 }
 
 .review-meta {
@@ -541,8 +569,8 @@
   font-size: 0.68rem;
   padding: 2px 8px;
   border-radius: 8px;
-  background: rgba(27, 65, 60, 0.08);
-  color: #1b413c;
+  background: rgba(232, 135, 154, 0.1);
+  color: #e8879a;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -557,18 +585,18 @@
 .history-thumb {
   width: 60px;
   height: 60px;
-  border-radius: 8px;
+  border-radius: 10px;
   object-fit: cover;
   flex-shrink: 0;
-  border: 1px solid #ece5e5;
+  border: 1px solid #f5d5dc;
 }
 
 .coupon-reward {
   margin-top: 10px;
   padding: 10px 12px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(21, 158, 117, 0.06), rgba(27, 65, 60, 0.06));
-  border: 1px solid rgba(21, 158, 117, 0.15);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(232, 135, 154, 0.06), rgba(242, 181, 195, 0.08));
+  border: 1px solid rgba(232, 135, 154, 0.15);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -578,7 +606,7 @@
   font-family: 'Courier New', monospace;
   font-weight: 700;
   font-size: 0.9rem;
-  color: #1b413c;
+  color: #e8879a;
   letter-spacing: 0.05em;
 }
 
@@ -598,9 +626,9 @@
   flex: 1;
   min-width: 120px;
   padding: 24px 16px;
-  border: 2.5px dashed #d0c4c4;
-  border-radius: 16px;
-  background: #faf8f8;
+  border: 2.5px dashed #f2b5c3;
+  border-radius: 18px;
+  background: #fff5f7;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -610,21 +638,21 @@
   font-family: 'Prompt', sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
-  color: #6e5353;
+  color: #e8879a;
   text-align: center;
 }
 
 .upload-type-btn:hover {
-  border-color: #6e5353;
-  background: rgba(110, 83, 83, 0.04);
+  border-color: #e8879a;
+  background: rgba(232, 135, 154, 0.06);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 16px rgba(232, 135, 154, 0.15);
 }
 
 .upload-type-hint {
   font-size: 0.65rem;
   font-weight: 400;
-  color: #a0928f;
+  color: #c4a0a8;
 }
 
 /* Video thumbnail */
@@ -638,7 +666,7 @@
   position: absolute;
   bottom: 4px;
   left: 4px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(232, 135, 154, 0.85);
   color: #fff;
   font-size: 0.55rem;
   padding: 2px 6px;
@@ -649,26 +677,27 @@
 /* Comment textarea */
 .review-comment-input {
   width: 100%;
-  border: 1.5px solid #e0d6d6;
-  border-radius: 12px;
+  border: 1.5px solid #f5d5dc;
+  border-radius: 14px;
   padding: 12px 14px;
   font-size: 0.85rem;
   font-family: 'Prompt', sans-serif;
   outline: none;
   transition: all 0.2s ease;
-  background: #faf8f8;
+  background: #fff5f7;
   box-sizing: border-box;
   resize: vertical;
   min-height: 80px;
   line-height: 1.5;
+  color: #5a3a42;
 }
 
 .review-comment-input:focus {
-  border-color: #6e5353;
-  box-shadow: 0 0 0 3px rgba(110, 83, 83, 0.1);
+  border-color: #e8879a;
+  box-shadow: 0 0 0 3px rgba(232, 135, 154, 0.12);
   background: #fff;
 }
 
 .review-comment-input::placeholder {
-  color: #c0b5b5;
+  color: #d4b0b8;
 }

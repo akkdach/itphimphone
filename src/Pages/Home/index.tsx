@@ -16,8 +16,8 @@ export default function Home() {
         <Box sx={{ flexGrow: 1, padding: 1, backgroundImage: pigs }}>
             <Header />
             <HomeMenu />
-            {/* <ProductCatalog />
-            <NewsTicker /> */}
+            {/* <ProductCatalog /> */}
+            <NewsTicker />
         </Box>
     );
 }

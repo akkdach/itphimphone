@@ -17,61 +17,9 @@ import {
 } from '../../Services/ReviewCouponService';
 import { uploadImageService } from '../../Services/uploadImageService';
 import './ReviewPage.css';
+import ImageWithAuth from '../../Component/ImageWithAuth';
 
-const CONFETTI_COLORS = ['#6e5353', '#1b413c', '#159e75', '#ffb74d', '#e91e63', '#2196f3'];
-
-const ImageWithAuth = ({ src, className, alt }: { src: string; className?: string; alt?: string }) => {
-  const [imageSrc, setImageSrc] = useState<string>('');
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    let objectUrl = '';
-    const fetchImage = async () => {
-      try {
-        const token = localStorage.getItem('token') || '';
-        const response = await fetch(src, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-        if (!response.ok) throw new Error('Failed to fetch image');
-        const blob = await response.blob();
-        objectUrl = URL.createObjectURL(blob);
-        setImageSrc(objectUrl);
-      } catch (err) {
-        console.error('Error fetching image:', err);
-        setError(true);
-      }
-    };
-    if (src) {
-      if (src.startsWith('http') || src.startsWith('/')) {
-        fetchImage();
-      } else {
-        setImageSrc(src);
-      }
-    }
-    return () => {
-      if (objectUrl) URL.revokeObjectURL(objectUrl);
-    };
-  }, [src]);
-
-  if (error) {
-    return (
-      <div className={className} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0eded', color: '#a0928f', fontSize: '10px', textAlign: 'center', padding: '10px' }}>
-        ไม่สามารถโหลดภาพได้
-      </div>
-    );
-  }
-  if (!imageSrc) {
-    return (
-      <div className={className} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f0eded' }}>
-        <CircularProgress size={20} sx={{ color: '#6e5353' }} />
-      </div>
-    );
-  }
-
-  return <img src={imageSrc} alt={alt} className={className} />;
-};
+const CONFETTI_COLORS = ['#e8879a', '#f2b5c3', '#f8c9d4', '#ffb74d', '#e91e63', '#ff8fa3'];
 
 export default function ReviewPage() {
   const navigate = useNavigate();
@@ -259,7 +207,7 @@ export default function ReviewPage() {
                 <span className="step-number">1</span>
                 รีวิวบน Social Media
               </div>
-              <Typography variant="body2" color="#8a7d7d" sx={{ mb: 1.5, fontSize: '0.8rem' }}>
+              <Typography variant="body2" color="#c4a0a8" sx={{ mb: 1.5, fontSize: '0.8rem' }}>
                 กดเลือกช่องทาง แล้วเขียนรีวิวประสบการณ์ของคุณ
               </Typography>
               <div className="social-buttons">
@@ -297,7 +245,7 @@ export default function ReviewPage() {
                 <span className="step-number">2</span>
                 แนบหลักฐานรีวิว
               </div>
-              <Typography variant="body2" color="#8a7d7d" sx={{ mb: 1.5, fontSize: '0.8rem' }}>
+              <Typography variant="body2" color="#c4a0a8" sx={{ mb: 1.5, fontSize: '0.8rem' }}>
                 โปรดแนบรูปแคปหน้าจอ 1 รูป (บังคับ) และลิงก์/คอมเม้นต์เพิ่มเติมได้
               </Typography>
 
@@ -383,7 +331,7 @@ export default function ReviewPage() {
               <div className="section-title">
                 ประเภท
                 {isPrefilledFromOrder && (
-                  <span style={{ fontWeight: 400, fontSize: '0.7rem', color: '#159e75', marginLeft: 8 }}>
+                  <span style={{ fontWeight: 400, fontSize: '0.7rem', color: '#e8879a', marginLeft: 8 }}>
                     ✅ อ้างอิงจาก{reviewType === 'loan' ? 'สินเชื่อ' : 'คำสั่งซื้อ'} #{reviewOrderId}
                   </span>
                 )}
@@ -415,7 +363,7 @@ export default function ReviewPage() {
                 onChange={e => !isPrefilledFromOrder && setReviewOrderId(e.target.value)}
                 placeholder="กรอก Loan/Order ID"
                 readOnly={isPrefilledFromOrder}
-                style={isPrefilledFromOrder ? { background: '#f0eded', color: '#6e5353' } : {}}
+                style={isPrefilledFromOrder ? { background: '#fff5f7', color: '#5a3a42' } : {}}
               />
 
               <div className="section-title" style={{ marginTop: 16 }}>
@@ -439,7 +387,7 @@ export default function ReviewPage() {
                   </motion.button>
                 ))}
               </div>
-              <Typography textAlign="center" variant="body2" sx={{ color: '#8a7d7d', fontSize: '0.78rem' }}>
+              <Typography textAlign="center" variant="body2" sx={{ color: '#c4a0a8', fontSize: '0.78rem' }}>
                 {displayRating === 0 && 'แตะดาวเพื่อให้คะแนน'}
                 {displayRating === 1 && '😔 ต้องปรับปรุง'}
                 {displayRating === 2 && '😐 พอใช้ได้'}
@@ -475,7 +423,7 @@ export default function ReviewPage() {
           >
             {loadingHistory ? (
               <Box display="flex" justifyContent="center" py={6}>
-                <CircularProgress size={32} sx={{ color: '#6e5353' }} />
+                <CircularProgress size={32} sx={{ color: '#e8879a' }} />
               </Box>
             ) : reviews.length === 0 ? (
               <motion.div
@@ -483,11 +431,11 @@ export default function ReviewPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 style={{ textAlign: 'center', padding: '40px 20px' }}
               >
-                <CameraAlt sx={{ fontSize: 56, color: '#d0c4c4', mb: 1 }} />
-                <Typography variant="body1" fontWeight={600} color="#6e5353">
+                <CameraAlt sx={{ fontSize: 56, color: '#f2b5c3', mb: 1 }} />
+                <Typography variant="body1" fontWeight={600} color="#5a3a42">
                   ยังไม่มีรีวิว
                 </Typography>
-                <Typography variant="body2" color="#a0928f" mt={0.5}>
+                <Typography variant="body2" color="#c4a0a8" mt={0.5}>
                   รีวิวบน Social Media แล้วอัปโหลดรูปแคปหน้าจอ
                 </Typography>
                 <motion.button
@@ -513,7 +461,7 @@ export default function ReviewPage() {
                       <span className="review-type-tag">
                         {r.reviewType === 'loan' ? '🏦' : '📦'} {r.reviewType}
                       </span>
-                      <Typography variant="caption" color="#a0928f">#{r.reviewOrderId}</Typography>
+                      <Typography variant="caption" color="#c4a0a8">#{r.reviewOrderId}</Typography>
                     </div>
                     <span className={`status-badge status-${r.status}`}>
                       {r.status === 'pending' && 'รออนุมัติ'}
@@ -539,7 +487,7 @@ export default function ReviewPage() {
                     ))}
                   </div>
 
-                  <Typography variant="caption" color="#a0928f">
+                  <Typography variant="caption" color="#c4a0a8">
                     {new Date(r.reviewedAt).toLocaleDateString('th-TH', {
                       year: 'numeric', month: 'short', day: 'numeric'
                     })}
@@ -547,10 +495,10 @@ export default function ReviewPage() {
 
                   {r.couponCode && (
                     <div className="coupon-reward">
-                      <LocalOffer sx={{ fontSize: 18, color: '#159e75' }} />
+                      <LocalOffer sx={{ fontSize: 18, color: '#e8879a' }} />
                       <div>
                         <div className="coupon-code-text">{r.couponCode}</div>
-                        <Typography variant="caption" color="#8a7d7d">
+                        <Typography variant="caption" color="#c4a0a8">
                           ส่วนลด {r.discountValue}
                           {r.discountType === 'percent' ? '%' : ' บาท'}
                           {r.couponExpiredAt && ` • หมดอายุ ${new Date(r.couponExpiredAt).toLocaleDateString('th-TH')}`}
@@ -596,7 +544,7 @@ export default function ReviewPage() {
                   }}
                 />
               ))}
-              <CheckCircle className="success-icon" />
+              <CheckCircle className="success-icon" sx={{ color: '#e8879a' }} />
               <div className="success-title">ส่งรีวิวสำเร็จ! 🎉</div>
               <div className="success-sub">
                 {successData?.data?.status === 'approved'
@@ -605,7 +553,7 @@ export default function ReviewPage() {
               </div>
               {successData?.data?.couponCode && (
                 <div className="coupon-reward" style={{ justifyContent: 'center' }}>
-                  <LocalOffer sx={{ fontSize: 18, color: '#159e75' }} />
+                  <LocalOffer sx={{ fontSize: 18, color: '#e8879a' }} />
                   <span className="coupon-code-text">{successData.data.couponCode}</span>
                 </div>
               )}
